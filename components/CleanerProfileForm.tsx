@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
-import type { CleanerProfile } from '@prisma/client'
+import type { CleanerProfile } from '@/prisma/client'
 import { MapPickerWrapper } from '@/components/map/MapPickerWrapper'
 
 export function CleanerProfileForm({

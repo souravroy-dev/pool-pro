@@ -1,4 +1,4 @@
-import type { User, Job, Bid, Review, CleanerProfile, CustomerProfile } from '@prisma/client'
+import type { User, Job, Bid, Review, CleanerProfile, CustomerProfile } from '@/prisma/client'
 
 export type { User, Job, Bid, Review, CleanerProfile, CustomerProfile }
 
