@@ -1,13 +1,12 @@
 import { PrismaClient } from '@/prisma/client/client'
-import { PrismaLibSql } from '@prisma/adapter-libsql'
+import { PrismaPg } from '@prisma/adapter-pg'
+import { Pool } from 'pg'
 
 const g = globalThis as unknown as { prisma: PrismaClient }
 
 function makeClient() {
-  const adapter = new PrismaLibSql({
-    url: process.env.DATABASE_URL!,
-    authToken: process.env.TURSO_AUTH_TOKEN,
-  })
+  const pool = new Pool({ connectionString: process.env.DATABASE_URL! })
+  const adapter = new PrismaPg(pool)
   return new PrismaClient({ adapter })
 }
 
